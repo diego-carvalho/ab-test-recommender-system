@@ -1,0 +1,238 @@
+<div class="container-step">
+    
+        <h2>Fale um pouco de voçe</h2>
+            
+        <div class="progress progressDiv">
+            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="">Passo 1</span></div>
+            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="">Passo 2</span></div>
+            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="">Passo 3</span></div>
+            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="">Passo 4</span></div>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step">Passo 5</span></div>
+        </div>
+    </div>
+    
+    
+    <div class="container-body">
+    
+        <div class="form-group">
+          <label for="exampleInputEmail1">1. Idade</label>
+          <input type="number" class="form-control" id="idade" aria-describedby="idade" placeholder="Entre com sua idade" [(ngModel)]="um">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">2. Sexo</label><br>
+          <div class="form-check form-check-inline">
+            <label class="custom-control custom-radio">
+              <input class="custom-control-input" type="radio" name="masc" id="max" value="masculino" [(ngModel)]="dois"> masculino
+              <span class="custom-control-indicator" style=""></span>
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="custom-control custom-radio">
+                <input class="custom-control-input" type="radio" name="fem" id="fem" value="feminino" [(ngModel)]="dois"> feminino
+                <span class="custom-control-indicator" style=""></span>
+              </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">3. Com que frequência você assiste filmes ou séries?</label><br>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                <input class="custom-control-input" type="radio" name="r31" id="r31" value="r31" [(ngModel)]="tres"> diariamente
+                <span class="custom-control-indicator" ></span>
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r32" id="r32" value="r32" [(ngModel)]="tres"> semanalmente
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r33" id="r33" value="ur33" [(ngModel)]="tres"> uma vez ao mês
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r34" id="r34" value="r34" [(ngModel)]="tres"> raramente
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r35" id="r35" value="r35" [(ngModel)]="tres"> nunca
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+          </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">4. Qual a sua preferência por filmes?</label><br>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                <input class="custom-control-input" type="radio" name="r41" id="r41" value="r41" [(ngModel)]="quatro"> gosto de filmes clássicos, que todo mundo gosta
+                <span class="custom-control-indicator" ></span>
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r42" id="r42" value="r42" [(ngModel)]="quatro"> gosto de filmes aclamados pela crítica 
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r43" id="r43" value="r43" [(ngModel)]="quatro"> gosto de filmes que estão na moda
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r44" id="r44" value="r44" [(ngModel)]="quatro"> gosto de filmes específicos, peculiares
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r45" id="r45" value="r45" [(ngModel)]="quatro"> não gosto de filmes
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+          </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">5. Você é assinante de algum sistema de entretenimento, como Netflix, Spotify, etc que recomenda itens para o seu consumo?</label><br>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                <input class="custom-control-input" type="radio" name="r51" id="r51" value="r51" [(ngModel)]="cinco"> sim
+                <span class="custom-control-indicator" ></span>
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r52" id="r52" value="r52" [(ngModel)]="cinco"> não
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+          </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">6. Você se sente confuso (i.e., demora muito) para encontrar os itens de seu interesse no(s) sistema(s) que utiliza?</label><br>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                <input class="custom-control-input" type="radio" name="r61" id="r61" value="r61" [(ngModel)]="seis"> muito confuso
+                <span class="custom-control-indicator" ></span>
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r62" id="r62" value="r62" [(ngModel)]="seis"> um pouco confuso 
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r63" id="r63" value="r63" [(ngModel)]="seis"> neutro
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r64" id="r64" value="r64" [(ngModel)]="seis"> não me sinto
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r65" id="r65" value="r65" [(ngModel)]="seis"> definitivamente não
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+          </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Você acha que os itens apresentados pelo(s) sistema(s) que utiliza são diversificados (i.e., apresentam muitos itens variados)?</label><br>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                <input class="custom-control-input" type="radio" name="r71" id="r71" value="r71" [(ngModel)]="sete"> definitivamente sim
+                <span class="custom-control-indicator" ></span>
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r72" id="r72" value="r72" [(ngModel)]="sete"> sim 
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r73" id="r73" value="r73" [(ngModel)]="sete"> mais ou menos  
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r74" id="r74" value="r74" [(ngModel)]="sete"> não
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="custom-control custom-radio">
+                  <input class="custom-control-input" type="radio" name="r75" id="r75" value="r75" [(ngModel)]="sete"> definitivamente não
+                  <span class="custom-control-indicator" ></span>
+                </label>
+            </div>
+          </div>
+        
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-xs-8">
+                <button class="btn btn-primary btn-block buttonNext" (click)="sendEvaluation()">
+                    Próximo
+                </button>
+        </div>
+    </div>
+    
+    
+    <!-- MODAL -->
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">{{movie.title}}</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="text-center">
+                <img class="modalImage" src="{{movie.image}}" alt="Card movie image">
+            </div>
+            <div class="container-s">
+                <span style="margin-top:10px;">
+                    Sinopse: {{movie.sinopse}}
+                </span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+        </div>
+    </ng-template>
+    
+    <!-- MODAL CONFIRM -->
+    <ng-template #confirmNoSelect let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title">Alert</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Confirme a ação de não escolher nenhum dos filmes apresentados</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="c('CONFIRM')">Confirmar</button>
+          <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancelar</button>
+        </div>
+      </ng-template>

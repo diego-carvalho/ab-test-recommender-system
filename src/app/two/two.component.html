@@ -7,6 +7,7 @@
         <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 2</span></div>
         <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 3</span></div>
         <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 4</span></div>
+        <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 5</span></div>
     </div>
 </div>
 
@@ -32,9 +33,9 @@
 <div class="container-body">
 
     <form #f="ngForm">
-        <h3>Produtos populares</h3>
+        <h3 *ngIf="(intr % 2) == 0">Produtos populares</h3>
         <ngx-carousel
-        [inputs]="carouselTile" >
+        [inputs]="carouselTile" *ngIf="(intr % 2) == 0">
     
             <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselPopularItems">
             <div class="card">
@@ -46,9 +47,9 @@
                 </div>
                 <div class="card-footer text-center">
                     <small class="text-muted">
-                        <label class="custom-control custom-radio " style="margin-left:0px;">
+                        <label class="custom-control custom-radio " style="margin-left:0px; height:3em; width: 3em;">
                             <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
-                            <input type="radio" value="{{Tile.id}}" name="{{Tile.id}}" [(ngModel)]="myFood" class="custom-control-input">
+                            <input type="radio" value="{{Tile.id}}" name="{{Tile.id}}" [(ngModel)]="movie" class="custom-control-input">
                             <span class="custom-control-indicator" style="height:3em; width: 3em; margin-top:-8px;"></span>
                         </label>
                     </small>
@@ -59,11 +60,11 @@
             <button NgxCarouselPrev class='leftRs'>&lt;</button>
             <button NgxCarouselNext class='rightRs'>&gt;</button>
         </ngx-carousel>
-        <h3>Produtos mais queridos</h3>
+        <h3 *ngIf="(intr % 2) == 0">Produtos mais queridos</h3>
         <ngx-carousel
-        [inputs]="carouselTile" >
+        [inputs]="carouselTile" *ngIf="(intr % 2) == 0">
     
-            <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselPopularItems">
+            <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselBestItems">
             <div class="card">
                 <div class="text-center">
                         <img class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
@@ -75,7 +76,7 @@
                     <small class="text-muted">
                         <label class="custom-control custom-radio " style="margin-left:0px;">
                             <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
-                            <input type="radio" value="{{Tile.id}}" name="{{Tile.id}}" [(ngModel)]="myFood" class="custom-control-input">
+                            <input type="radio" value="{{Tile.id}}" name="{{Tile.id}}" [(ngModel)]="movie" class="custom-control-input">
                             <span class="custom-control-indicator" style="height:3em; width: 3em; margin-top:-8px;"></span>
                         </label>
                     </small>
@@ -90,7 +91,7 @@
         <ngx-carousel
         [inputs]="carouselTile" >
     
-            <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselPopularItems">
+            <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselRecItems">
             <div class="card">
                 <div class="text-center">
                         <img class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
@@ -102,7 +103,61 @@
                     <small class="text-muted">
                         <label class="custom-control custom-radio " style="margin-left:0px;">
                             <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
-                            <input type="radio" value="{{Tile.id}}" name="{{Tile.id}}" [(ngModel)]="myFood" class="custom-control-input">
+                            <input type="radio" value="{{Tile.id}}" name="{{Tile.id}}" [(ngModel)]="movie" class="custom-control-input">
+                            <span class="custom-control-indicator" style="height:3em; width: 3em; margin-top:-8px;"></span>
+                        </label>
+                    </small>
+                </div>
+            </div>
+            </ngx-tile>
+    
+            <button NgxCarouselPrev class='leftRs'>&lt;</button>
+            <button NgxCarouselNext class='rightRs'>&gt;</button>
+        </ngx-carousel>
+        <h3 *ngIf="(intr % 2) == 1">Produtos Diversificados</h3>
+        <ngx-carousel
+        [inputs]="carouselTile" *ngIf="(intr % 2) == 1">
+    
+            <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselMaxItems">
+            <div class="card">
+                <div class="text-center">
+                        <img class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
+                </div>
+                <div class="card-block text-center">
+                    <button class="btn btn-secondary btninfo" (click)="open(content, Tile)">+ info</button>
+                </div>
+                <div class="card-footer text-center">
+                    <small class="text-muted">
+                        <label class="custom-control custom-radio " style="margin-left:0px;">
+                            <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
+                            <input type="radio" value="{{Tile.id}}" name="{{Tile.id}}" [(ngModel)]="movie" class="custom-control-input">
+                            <span class="custom-control-indicator" style="height:3em; width: 3em; margin-top:-8px;"></span>
+                        </label>
+                    </small>
+                </div>
+            </div>
+            </ngx-tile>
+    
+            <button NgxCarouselPrev class='leftRs'>&lt;</button>
+            <button NgxCarouselNext class='rightRs'>&gt;</button>
+        </ngx-carousel>
+        <h3 *ngIf="(intr % 2) == 1">O Melhor de cada categoria</h3>
+        <ngx-carousel
+        [inputs]="carouselTile" *ngIf="(intr % 2) == 1">
+    
+            <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselNiItems">
+            <div class="card">
+                <div class="text-center">
+                        <img class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
+                </div>
+                <div class="card-block text-center">
+                    <button class="btn btn-secondary btninfo" (click)="open(content, Tile)">+ info</button>
+                </div>
+                <div class="card-footer text-center">
+                    <small class="text-muted">
+                        <label class="custom-control custom-radio " style="margin-left:0px;">
+                            <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
+                            <input type="radio" value="{{Tile.id}}" name="{{Tile.id}}" [(ngModel)]="movie" class="custom-control-input">
                             <span class="custom-control-indicator" style="height:3em; width: 3em; margin-top:-8px;"></span>
                         </label>
                     </small>
@@ -118,12 +173,12 @@
 
 <div class="row justify-content-center">
     <div class="col-md-4 col-xs-8">
-            <button class="btn btn-primary btn-block buttonNext" [routerLink]="['/two']">
+            <button class="btn btn-primary btn-block buttonNext" (click)="sendNoEvaluation(confirmNoSelect)">
                 Nenhum dos filmes apresentados
             </button>
     </div>
     <div class="col-md-4 col-xs-8">
-            <button class="btn btn-primary btn-block buttonNext" [routerLink]="['/two']">
+            <button class="btn btn-primary btn-block buttonNext" (click)="sendEvaluation()">
                 Próximo
             </button>
     </div>
@@ -152,3 +207,20 @@
         <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
     </div>
 </ng-template>
+
+<!-- MODAL CONFIRM -->
+<ng-template #confirmNoSelect let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Alert</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Confirme a ação de não escolher nenhum dos filmes apresentados</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="c('CONFIRM')">Confirmar</button>
+      <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancelar</button>
+    </div>
+  </ng-template>
