@@ -1,6 +1,4 @@
 <div class="container-step">
-    
-        <h2>Selecione os filmes mais interessantes para você!</h2>
             
         <div class="progress progressDiv">
             <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="">Passo 1</span></div>
@@ -9,13 +7,15 @@
             <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 4</span></div>
             <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 5</span></div>
         </div>
+
+        <h2>Instruções: selecione os filmes mais interessantes para você!</h2>
     </div>
     
     
     <div class="container-body">
     
         <form #f="ngForm">
-            <h3>Produtos populares</h3>
+            <h3>Filmes Populares</h3>
             <ngx-carousel
             [inputs]="carouselTile" >
         
@@ -25,14 +25,14 @@
                             <img class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
                     </div>
                     <div class="card-block text-center">
-                        <button class="btn btn-secondary btninfo" (click)="open(content, Tile)">+ info</button>
+                        <button class="btn btn-secondary btn-sm btninfo" (click)="open(content, Tile)">+ info</button>
                     </div>
                     <div class="card-footer text-center">
                         <small class="text-muted">
                             <label class="custom-control custom-checkbox " style="margin-left:0px; height:3em; width: 3em;">
                                 <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
                                 <input type="checkbox" value="{{Tile.id}}" name="{{Tile.id}}" (change)="changeCheckbox($event, Tile)" [(ngModel)]="Tile.modal" class="custom-control-input">
-                                <span class="custom-control-indicator" style="height:3em; width: 3em; margin-top:-8px;"></span>
+                                <span class="custom-control-indicator" style="height:2.5em; width: 2.5em; margin-top:-5px; margin-left:10px;"></span>
                             </label>
                         </small>
                     </div>
@@ -42,7 +42,10 @@
                 <button NgxCarouselPrev class='leftRs'>&lt;</button>
                 <button NgxCarouselNext class='rightRs'>&gt;</button>
             </ngx-carousel>
-            <h3>Produtos mais queridos</h3>
+
+            <hr>
+
+            <h3>Filmes Mais Bem Avaliados</h3>
             <ngx-carousel
             [inputs]="carouselTile" >
         
@@ -52,14 +55,14 @@
                             <img class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
                     </div>
                     <div class="card-block text-center">
-                        <button class="btn btn-secondary btninfo" (click)="open(content, Tile)">+ info</button>
+                        <button class="btn btn-secondary btn-sm btninfo" (click)="open(content, Tile)">+ info</button>
                     </div>
                     <div class="card-footer text-center">
                         <small class="text-muted">
                             <label class="custom-control custom-checkbox " style="margin-left:0px; height:3em; width: 3em;">
                                 <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
                                 <input type="checkbox" value="{{Tile.id}}" name="{{Tile.id}}" (change)="changeCheckbox($event, Tile)" [(ngModel)]="Tile.modal" class="custom-control-input">
-                                <span class="custom-control-indicator" style="height:3em; width: 3em; margin-top:-8px;"></span>
+                                <span class="custom-control-indicator" style="height:2.5em; width: 2.5em; margin-top:-5px; margin-left:10px;"></span>
                             </label>
                         </small>
                     </div>
@@ -69,7 +72,11 @@
                 <button NgxCarouselPrev class='leftRs'>&lt;</button>
                 <button NgxCarouselNext class='rightRs'>&gt;</button>
             </ngx-carousel>
-            <h3>Produtos diversificados</h3>
+
+            <hr>
+
+
+            <h3>Filmes que Interessam a Muitos Usuários</h3>
             <ngx-carousel
             [inputs]="carouselTile" >
         
@@ -79,14 +86,14 @@
                             <img class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
                     </div>
                     <div class="card-block text-center">
-                        <button class="btn btn-secondary btninfo" (click)="open(content, Tile)">+ info</button>
+                        <button class="btn btn-secondary btn-sm btninfo" (click)="open(content, Tile)">+ info</button>
                     </div>
                     <div class="card-footer text-center">
                         <small class="text-muted">
                             <label class="custom-control custom-checkbox " style="margin-left:0px; height:3em; width: 3em;">
                                 <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
                                 <input type="checkbox" value="{{Tile.id}}" name="{{Tile.id}}" (change)="changeCheckbox($event, Tile)" [(ngModel)]="Tile.modal" class="custom-control-input">
-                                <span class="custom-control-indicator" style="height:3em; width: 3em; margin-top:-8px;"></span>
+                                <span class="custom-control-indicator" style="height:2.5em; width: 2.5em; margin-top:-5px; margin-left:10px;"></span>
                             </label>
                         </small>
                     </div>
@@ -96,6 +103,9 @@
                 <button NgxCarouselPrev class='leftRs'>&lt;</button>
                 <button NgxCarouselNext class='rightRs'>&gt;</button>
             </ngx-carousel>
+
+            <hr>
+
             <h3>O Melhor de cada categoria</h3>
             <ngx-carousel
             [inputs]="carouselTile" >
@@ -106,14 +116,14 @@
                             <img class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
                     </div>
                     <div class="card-block text-center">
-                        <button class="btn btn-secondary btninfo" (click)="open(content, Tile)">+ info</button>
+                        <button class="btn btn-secondary btn-sm btninfo" (click)="open(content, Tile)">+ info</button>
                     </div>
                     <div class="card-footer text-center">
                         <small class="text-muted">
                             <label class="custom-control custom-checkbox " style="margin-left:0px; height:3em; width: 3em;">
                                 <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
                                 <input type="checkbox" value="{{Tile.id}}" name="{{Tile.id}}" (change)="changeCheckbox($event, Tile)" [(ngModel)]="Tile.modal" class="custom-control-input">
-                                <span class="custom-control-indicator" style="height:3em; width: 3em; margin-top:-8px;"></span>
+                                <span class="custom-control-indicator" style="height:2.5em; width: 2.5em; margin-top:-5px; margin-left:10px;"></span>
                             </label>
                         </small>
                     </div>
@@ -131,6 +141,11 @@
                 <button class="btn btn-primary btn-block buttonNext" (click)="sendEvaluation()">
                     Próximo
                 </button>
+        </div>
+        <div class="col-md-4 col-xs-8">
+            <button class="btn btn-danger btn-block buttonNext" (click)="leaveSystem(confirmLeave)">
+                Sair
+            </button>
         </div>
     </div>
     
@@ -174,3 +189,20 @@
           <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancelar</button>
         </div>
       </ng-template>
+
+    <!-- MODAL SAIR -->
+    <ng-template #confirmLeave let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Alert</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Você gostaria de deixar a pesquisa?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="c('CONFIRM')">SIM</button>
+        <button type="button" class="btn btn-primary" (click)="c('Close click')">NÂO</button>
+    </div>
+    </ng-template>

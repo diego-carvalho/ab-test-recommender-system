@@ -22,6 +22,7 @@ import { FourComponent } from './four/four.component';
 import { FiveComponent } from './five/five.component';
 import { SixComponent } from './six/six.component';
 import { EndComponent } from './end/end.component';
+import { OneComponent } from './one/one.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyB9H3j7NzYlTfcvo6VJHpgH8sIPueepzs8",
@@ -41,7 +42,8 @@ export const firebaseConfig = {
     FourComponent,
     FiveComponent,
     SixComponent,
-    EndComponent
+    EndComponent,
+    OneComponent
   ],
   imports: [
     BrowserModule,

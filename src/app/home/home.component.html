@@ -2,16 +2,56 @@
   <div class="row align-items-center body">
       <div class="col">
         <div class="startText text-center">
-            Você está em casa e decide assistir um filme.
-            Assuma que você vai escolher o filme de acordo com sua preferência pessoal, independente se estiver qualquer pessoa com você.
-            Para isso você acessou um sistema de filmes que irá te recomendar algumas opções. Desfrute-as!
-            <br>
-
-            <button class="btn btn-primary buttonNext" (click)="goNext()">
-              Começar
-            </button>
+          Seja Bem Vindo!
+          <br>
+          <br>
+          Esta é uma pesquisa conduzida por membros do departamento de Ciência da Computação da Universidade Federal de Minas Gerais (UFMG).
+          Nessa pesquisa, estamos estudando o auxílio que as listas recomendações proporcionam para os usuários de um sistema web.
+          <br>
+          <br>
+          Este estudo é dividido em 5 etapas distintas. 
+          As orientações para cada etapa serão apresentadas no momento da pesquisa. Você não é obrigado a responder todas as perguntas e caso deseje, 
+          você poderá deixar o sistema a qualquer momento.
+          Em geral, vamos apresentar algumas listas de filmes e realizar algumas perguntas sobre a sua opinião a respeito das listas. 
+          <br>
+          <br>
+          Todos os dados coletados são anonimizados e restritos 
+          aos membros dessa pesquisa.
+          <br>
+          <br>
+          Você é o nosso convidado para participar!
+          <br>
+          <br>
+          Para começar, concorde com o termo de compromisso.
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" style="margin-top:10px;"
+              (change)="changeCheckbox($event)">
+              Aceito o termo de compromisso
+            </label>
+          </div>
+          <br>
+          <button class="btn btn-primary buttonNext" (click)="goNext(confirmNoSelect)">
+            Começar
+          </button>
 
         </div>
       </div>
   </div>
 </div>
+
+<!-- MODAL CONFIRM -->
+<ng-template #confirmNoSelect let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Alert</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Para continuar precisa aceitar o termo de compromisso, obrigado.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="c('CONFIRM')">OK</button>
+  </div>
+</ng-template>

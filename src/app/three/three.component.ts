@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 import { AngularFireDatabase } from 'angularfire2/database';
 
@@ -19,9 +20,13 @@ export class ThreeComponent implements OnInit {
   public q6 : any;
   public comments: string = "";
 
+  private modalRef: any;
+  public closeResult: string; 
+
   public user: any = undefined;
 
-  constructor(private router: Router, private angFireData: AngularFireDatabase) { }
+  constructor(private router: Router, private angFireData: AngularFireDatabase,
+              private modalService: NgbModal,) { }
 
   ngOnInit() {
     this.user = localStorage.getItem('user');
@@ -29,22 +34,28 @@ export class ThreeComponent implements OnInit {
 
   sendEvaluation(){
     if(!this.q1){
-      return this.errorParams('1');
+      //return this.errorParams('1');
+      this.q1 = 'sem resposta'
     }
     if(!this.q2){
-      return this.errorParams('2');
+      //return this.errorParams('2');
+      this.q2 = 'sem resposta'
     }
     if(!this.q3){
-      return this.errorParams('3');
+      //return this.errorParams('3');
+      this.q3 = 'sem resposta'
     }
     if(!this.q4){
-      return this.errorParams('4');
+      //return this.errorParams('4');
+      this.q4 = 'sem resposta'
     }
     if(!this.q5){
-      return this.errorParams('5');
+      //return this.errorParams('5');
+      this.q5 = 'sem resposta'
     }
     if(!this.q6){
-      return this.errorParams('6');
+      //return this.errorParams('6');
+      this.q6 = 'sem resposta'
     }
     console.log("Page three Ok");
     console.log(this.comments);
@@ -67,6 +78,40 @@ export class ThreeComponent implements OnInit {
 
   errorParams(q){
     alert("Por favor escolha uma das opções na pergunta " + q);
+  }
+
+  leaveSystem(content){
+    this.modalRef = this.modalService.open(content);
+    this.modalRef.result.then((result) => {
+      if(result == "CONFIRM"){
+
+        this.router.navigate(['/end']);
+
+      }else{
+        console.log(`Closed with: ${result}`);
+      }
+    }, (reason) => {
+      console.log(`Dismissed ${this.getDismissReason(reason)}`);
+    });
+  }
+
+  open(content) {
+
+    this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
 
 }
