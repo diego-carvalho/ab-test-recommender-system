@@ -8,7 +8,7 @@
             <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step">Passo 5</span></div>
         </div>
 
-        <h2>Instruções: Fale um pouco de voçe</h2>
+        <h1 class="textInstruction">Instruções: Fale um pouco de você</h1>
     </div>
     
     
@@ -16,7 +16,7 @@
     
         <div class="form-group">
           <label for="exampleInputEmail1">1. Idade</label>
-          <input type="number" class="form-control" id="idade" aria-describedby="idade" placeholder="Entre com sua idade" [(ngModel)]="um">
+          <input type="number" class="form-control col-lg-2 col-md-3 col-sm-4 col-xs-8" id="idade" aria-describedby="idade" placeholder="Entre com sua idade" [(ngModel)]="um">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">2. Sexo</label><br>
@@ -153,7 +153,7 @@
           </div>
 
         <div class="form-group">
-            <label for="exampleInputPassword1">Você acha que os itens apresentados pelo(s) sistema(s) que utiliza são diversificados (i.e., apresentam muitos itens variados)?</label><br>
+            <label for="exampleInputPassword1">7. Você acha que os itens apresentados pelo(s) sistema(s) que utiliza são diversificados (i.e., apresentam muitos itens variados)?</label><br>
             <div class="form-check form-check-inline">
               <label class="custom-control custom-radio">
                 <input class="custom-control-input" type="radio" name="r71" id="r71" value="r71" [(ngModel)]="sete"> definitivamente sim
@@ -190,13 +190,13 @@
     
     <div class="row justify-content-center">
         <div class="col-md-4 col-xs-8">
-                <button class="btn btn-primary btn-block buttonNext" (click)="sendEvaluation()">
-                    Próximo
-                </button>
-        </div>
-        <div class="col-md-4 col-xs-8">
             <button class="btn btn-danger btn-block buttonNext" (click)="leaveSystem(confirmLeave)">
                 Sair
+            </button>
+        </div>
+        <div class="col-md-4 col-xs-8">
+            <button class="btn btn-primary btn-block buttonNext" (click)="sendEvaluation()">
+                Próximo
             </button>
         </div>
     </div>

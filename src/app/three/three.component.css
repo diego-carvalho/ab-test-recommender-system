@@ -6,8 +6,8 @@
 }
 
 .progressDiv{
-    height: 40px;
-    margin-top: 20px;
+    height: 30px;
+    margin-top: 15px;
 }
 .step{
     font-size: 1.5em;
@@ -15,7 +15,10 @@
 .step-out{
     color:black;
 }
-
+.textInstruction{
+    margin-top: 30px;
+    text-align: center;
+}
 .buttonNext{
     font-size: 1.1em;
     margin-top: 20px;
@@ -30,7 +33,7 @@
 .container-body{
     width: 90%;
     margin-left: 5%;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .btninfo{
     padding-right: 10%;

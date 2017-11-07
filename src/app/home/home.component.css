@@ -1,8 +1,9 @@
 .body{
-    background-color: white;
-    margin-top: 5vh;
+    background-color: rgba(255, 255, 255, 0.7);
     min-height: 90vh;
     border-radius: 20px;
+}
+.container-body{
 }
 .startText{
     font-size: 1.2em;
@@ -11,4 +12,15 @@
 .buttonNext{
     font-size: 1.1em;
     margin-top: 20px;
+}
+
+.termText{
+    color: blue;
+    cursor: pointer;
+}
+
+.imgBackground{
+    height: 100vh;
+    padding-top: 5vh;
+    background: #eeeeee url("/assets/img/minions.jpg") no-repeat fixed center; 
 }

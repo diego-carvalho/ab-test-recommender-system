@@ -29,6 +29,7 @@ export class SixComponent implements OnInit {
               private modalService: NgbModal,) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.user = localStorage.getItem('user');
   }
 

@@ -16,6 +16,7 @@ export class OneComponent implements OnInit {
   constructor(private router: Router, private angFireData: AngularFireDatabase) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
     this.angFireData.database.ref('AB/').once('value')
       .then((res) => {
         this.intr = res.val().interator;
