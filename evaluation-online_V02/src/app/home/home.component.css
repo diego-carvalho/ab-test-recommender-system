@@ -1,0 +1,38 @@
+.body{
+    background-color: rgba(255, 255, 255, 0.7);
+    min-height: 90vh;
+    border-radius: 20px;
+}
+.container-body{
+}
+.startText{
+    font-size: 1.2em;
+}
+
+.buttonNext{
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+.termText{
+    color: blue;
+    cursor: pointer;
+}
+
+.imgBackground{
+    height: 100vh;
+    padding-top: 5vh;
+    background: #eeeeee url("/assets/img/minions.jpg") no-repeat fixed center; 
+}
+
+
+/deep/
+.modal-dialog {
+    width: 100% !important;
+}
+@media (min-width: 576px){
+    /deep/
+    .modal-dialog {
+        max-width: 80%;
+    }    
+}

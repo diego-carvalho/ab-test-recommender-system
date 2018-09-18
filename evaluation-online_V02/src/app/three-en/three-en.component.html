@@ -1,0 +1,214 @@
+<div class="container-step">
+        
+  <!--<div class="progress progressDiv">
+      <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step">Passo 1</span></div>
+      <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 2</span></div>
+      <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 3</span></div>
+      <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 4</span></div>
+      <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 5</span></div>
+      <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 6</span></div>
+  </div>-->
+
+  <h1 class="textInstruction" style="font-weight: bold"> Instructions: Please, answer these questions! </h1>
+</div>
+
+
+<div class="container-body">
+  <p class="text-right font-weight-bold">{{step}}</p>
+<div class="row align-items-center">
+    <div class="text-center col-md-6 col-sm-12">
+        <img class="modalImage" src="{{movie.image}}" alt="Card movie image">
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <h4 class="modal-title">{{movie.title}}</h4>
+        <br>
+        <span style="margin-top:10px;">
+            {{movie.Genre}}.<br>
+            {{movie.Directed}}.<br>
+            {{movie.Written}}.<br>
+            {{movie.Runtime}}.<br>
+            {{movie.Studio}}.<br>
+            Sinopse: {{movie.sinopse}}
+        </span>
+    </div>  
+</div>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Questions</th>
+        <th>Yes</th>
+        <th>No</th>
+        <th class="text-nowrap">Don't know</th>
+      </tr>
+    </thead>
+    <tbody>
+  
+      <tr>
+        <td>1. Did you already know about this movie before this recommendation? (Yes, No, Don’t know)</td>
+        <td class="text-center">
+          <label class="custom-control custom-radio "style="margin-left:0px; height:1.6em; width: 1.6em;">
+              <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
+              <input type="radio" value="q11" name="q11" [(ngModel)]="q1" class="custom-control-input">
+              <span class="custom-control-indicator" style="height:1.6em; width: 1.6em;"></span>
+          </label>
+        </td>
+        <td class="text-center">
+            <label class="custom-control custom-radio " style="margin-left:0px; height:1.6em; width: 1.6em;">
+                <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
+                <input type="radio" value="q12" name="q12" [(ngModel)]="q1" class="custom-control-input">
+                <span class="custom-control-indicator" style="height:1.6em; width: 1.6em;"></span>
+            </label>
+          </td>
+        <td class="text-center">
+          <label class="custom-control custom-radio " style="margin-left:0px; height:1.6em; width: 1.6em;">
+              <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
+              <input type="radio" value="q13" name="q13" [(ngModel)]="q1" class="custom-control-input">
+              <span class="custom-control-indicator" style="height:1.6em; width: 1.6em;"></span>
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+          <td>2. Have you already watched this movie? (Yes, No)</td>
+          <td class="text-center">
+            <label class="custom-control custom-radio " style="margin-left:0px; height:1.6em; width: 1.6em;">
+                <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
+                <input type="radio" value="q21" name="q21" [(ngModel)]="q2" class="custom-control-input">
+                <span class="custom-control-indicator" style="height:1.6em; width: 1.6em;"></span>
+            </label>
+          </td>
+          <td class="text-center">
+              <label class="custom-control custom-radio " style="margin-left:0px; height:1.6em; width: 1.6em;">
+                  <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
+                  <input type="radio" value="q22" name="q22" [(ngModel)]="q2" class="custom-control-input">
+                  <span class="custom-control-indicator" style="height:1.6em; width: 1.6em;"></span>
+              </label>
+            </td>
+        </tr>
+
+        <tr>
+          <td>3. Would you like to watch this movie (for the first time or once again if you have already watched it)? (Yes, No, Don’t know)</td>
+          <td class="text-center">
+            <label class="custom-control custom-radio " style="margin-left:0px; height:1.6em; width: 1.6em;">
+                <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
+                <input type="radio" value="q31" name="q31" [(ngModel)]="q3" class="custom-control-input">
+                <span class="custom-control-indicator" style="height:1.6em; width: 1.6em;"></span>
+            </label>
+          </td>
+          <td class="text-center">
+              <label class="custom-control custom-radio " style="margin-left:0px; height:1.6em; width: 1.6em;">
+                  <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
+                  <input type="radio" value="q32" name="q32" [(ngModel)]="q3" class="custom-control-input">
+                  <span class="custom-control-indicator" style="height:1.6em; width: 1.6em;"></span>
+              </label>
+            </td>
+          <td class="text-center">
+            <label class="custom-control custom-radio " style="margin-left:0px; height:1.6em; width: 1.6em;">
+                <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
+                <input type="radio" value="q33" name="q33" [(ngModel)]="q3" class="custom-control-input">
+                <span class="custom-control-indicator" style="height:1.6em; width: 1.6em;"></span>
+            </label>
+          </td>
+        </tr>
+
+        <small id="emailHelp" class="form-text text-muted">Please read each of the questions and state your opinion.</small>
+      </tbody>
+  </table>
+  
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-md-4 col-xs-8">
+          <button class="btn btn-danger btn-block buttonNext" (click)="leaveSystem(confirmLeave)">
+              Leave
+          </button>
+  </div>
+  <div class="col-md-4 col-xs-8">
+      <button class="btn btn-info btn-block buttonNext" (click)="sendNoEvaluation(confirmNoSelect)">
+        Do not rate this movie
+      </button>
+  </div>
+  <div class="col-md-4 col-xs-8">
+      <button class="btn btn-primary btn-block buttonNext" (click)="nextEvaluationMovie()">
+          Next
+      </button>
+  </div>
+</div>
+
+
+<!-- MODAL -->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+      <h4 class="modal-title">{{movie.title}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+      <div class="text-center">
+          <img class="modalImage" src="{{movie.image}}" alt="Card movie image">
+      </div>
+      <div class="container-s">
+          <span style="margin-top:10px;">
+              Sinopse: {{movie.sinopse}}
+          </span>
+      </div>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<!-- MODAL Context -->
+<ng-template #contextModel let-c="close" let-d="dismiss">
+  <div class="modal-header">
+      <h4 class="modal-title">Alert</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+      <p>MINHAS CONTEXTUALIZAÇÔES</p>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="c('CONFIRM')">Confirmar</button>
+      <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancelar</button>
+  </div>
+</ng-template>
+
+<!-- MODAL CONFIRM -->
+<ng-template #confirmNoSelect let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Alert</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Confirme a ação para não avaliar o filme apresentado</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="c('CONFIRM')">Confirmar</button>
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancelar</button>
+  </div>
+</ng-template>
+
+
+
+<!-- MODAL SAIR -->
+<ng-template #confirmLeave let-c="close" let-d="dismiss">
+<div class="modal-header">
+  <h4 class="modal-title">Alert</h4>
+  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+  <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>Você gostaria de deixar a pesquisa?</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="c('CONFIRM')">SIM</button>
+  <button type="button" class="btn btn-primary" (click)="c('Close click')">NÂO</button>
+</div>
+</ng-template>

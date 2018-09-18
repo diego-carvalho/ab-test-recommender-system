@@ -1,0 +1,183 @@
+<div class="container-step">
+        
+    <!--<div class="progress progressDiv">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step">Passo 1</span></div>
+        <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 2</span></div>
+        <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 3</span></div>
+        <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 4</span></div>
+        <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 5</span></div>
+        <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 6</span></div>
+    </div>-->
+
+    <h1 class="textInstruction"  style="font-weight: bold">Instruções: Arraste cerca de 5 filmes e coloque-os na sua ordem preferida!</h1>
+</div>
+
+
+
+<div class="container-body">
+
+  <!--<div class="card-columns" [sortablejs]="listMovies">
+    <div class="card" *ngFor="let Tile of listMovies">
+        <div class="text-center">
+                <img class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
+        </div>
+        <div class="card-body text-center">
+            <h5 class="card-title">{{Tile.title}}</h5>
+          </div>
+    </div>
+  </div>-->
+
+  <div class="row" [sortablejs]="listSelectedMovies" [sortablejsOptions]="normalOptions">
+    <div class=" col-lg-2 col-md-3 col-sm-4 col-xs-4 divCards" *ngFor="let Tile of listSelectedMovies" style="padding: 10px;">
+      <div class="card" >
+          <div class="text-center">
+                  <img *ngIf="Tile.id == 0" class="card-img-top" src="{{Tile.image}}" alt="Card movie image">
+                  <img *ngIf="Tile.id != 0" class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
+          </div>
+          <div class="card-block text-center">
+                <button class="btn btn-secondary btn-sm btninfo" (click)="open(content, Tile)">+ info</button>
+            </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div class="row" [sortablejs]="listMovies" [sortablejsOptions]="normalOptions">
+      <div class=" col-lg-2 col-md-3 col-sm-4 divCards" *ngFor="let Tile of listMovies" style="padding: 10px;">
+        <div class="card" >
+            <div class="text-center">
+                    <img class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
+            </div>
+            <div class="card-body text-center">
+                <button class="btn btn-secondary btn-sm btninfo" (click)="open(content, Tile)">+ info</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  <!--<ul>
+    <li *ngFor="let Tile of listMovies">
+        <div class="card">
+            <div class="text-center">
+                    <img class="card-img-top card-image" src="{{Tile.image}}" alt="Card movie image">
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">{{Tile.title}}</h5>
+              </div>
+        </div>
+    </li>
+  </ul>-->
+
+    
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-4 col-xs-8">
+            <button class="btn btn-danger btn-block buttonNext" (click)="leaveSystem(confirmLeave)">
+                Sair
+            </button>
+    </div>
+    <div class="col-md-4 col-xs-8">
+        <button class="btn btn-info btn-block buttonNext" (click)="sendNoEvaluation(confirmNoSelect)">
+            Não desejo realizar este passo
+        </button>
+    </div>
+    <div class="col-md-4 col-xs-8">
+        <button class="btn btn-primary btn-block buttonNext" (click)="sendEvaluation()">
+                Próximo
+            </button>
+    </div>
+</div>
+
+
+<!-- MODAL -->
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">{{movie.title}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="text-center">
+            <img class="modalImage" src="{{movie.image}}" alt="Card movie image">
+        </div>
+        <div class="container-s">
+            <span style="margin-top:10px;">
+                Sinopse: {{movie.sinopse}}
+            </span>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Fechar</button>
+    </div>
+</ng-template>
+
+<!-- MODAL Context -->
+<ng-template #contextModel let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title"></h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+            <div class="startText text-center">
+
+                <h4>Contextualização</h4>
+                <br>
+                Você está em casa e decide assistir um filme. 
+                <br>
+                Assuma que você vai escolher o filme de acordo com sua <b>preferência pessoal</b>, independente se estiver qualquer pessoa com você. <br>
+                Para isso você acessou um sistema de filmes que irá te recomendar algumas opções.
+                <br>
+                <br>
+    
+                <button class="btn btn-primary buttonNext" (click)="c('CONFIRM')">
+                    Combinado!
+                </button>
+    
+            </div>
+            <div class="modal-footer">
+            </div>
+    </div>
+</ng-template>
+
+<!-- MODAL CONFIRM -->
+<ng-template #confirmNoSelect let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Alert</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Confirme a ação de não pretender realizar a tarefa de ranking.</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="c('CONFIRM')">Confirmar</button>
+      <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancelar</button>
+    </div>
+  </ng-template>
+
+
+
+<!-- MODAL SAIR -->
+<ng-template #confirmLeave let-c="close" let-d="dismiss">
+<div class="modal-header">
+    <h4 class="modal-title">Alert</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <p>Você gostaria de deixar a pesquisa?</p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="c('CONFIRM')">SIM</button>
+    <button type="button" class="btn btn-primary" (click)="c('Close click')">NÂO</button>
+</div>
+</ng-template>
