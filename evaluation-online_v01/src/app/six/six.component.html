@@ -1,0 +1,111 @@
+<div class="container-step">
+            
+        <div class="progress progressDiv">
+            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="">Passo 1</span></div>
+            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="">Passo 2</span></div>
+            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="">Passo 3</span></div>
+            <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="">Passo 4</span></div>
+            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step">Passo 5</span></div>
+            <div class="progress-bar bg-light" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span class="step-out">Passo 6</span></div>
+        </div>
+
+        <h1 class="textInstruction">Instruções: Dentre os filmes que você não conhece, marque quais você teria interesse em assistir</h1>
+    </div>
+    
+    
+    <div class="container-body">
+    
+      <div class="row">
+        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-6" *ngFor="let Item of listOfObjects">
+          <div class="card">
+              <div class="text-center">
+                      <img class="card-img-top card-image" src="{{Item.image}}" alt="Card movie image">
+              </div>
+              <div class="card-block text-center">
+                  <button class="btn btn-secondary btn-sm btninfo" (click)="open(content, Item)">+ info</button>
+              </div>
+              <div class="card-footer text-center">
+                  <small class="text-muted">
+                      <label class="custom-control custom-checkbox " style="margin-left:0px; height:3em; width: 3em;">
+                          <!--<input id="radio1" name="radio" type="radio" class="custom-control-input">-->
+                          <input type="checkbox" value="{{Item.id}}" name="{{Item.id}}" (change)="changeCheckbox($event, Item)" [(ngModel)]="Item.modal" class="custom-control-input">
+                          <span class="custom-control-indicator" style="height:2.5em; width: 2.5em; margin-top:-5px; margin-left:10px;"></span>
+                      </label>
+                  </small>
+              </div>
+          </div>
+        </div>
+      </div>
+        
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-xs-8">
+            <button class="btn btn-danger btn-block buttonNext" (click)="leaveSystem(confirmLeave)">
+                Sair
+            </button>
+        </div>
+        <div class="col-md-4 col-xs-8">
+            <button class="btn btn-primary btn-block buttonNext" (click)="sendEvaluation()">
+                Próximo
+            </button>
+        </div>
+    </div>
+    
+    
+    <!-- MODAL -->
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">{{movie.title}}</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="text-center">
+                <img class="modalImage" src="{{movie.image}}" alt="Card movie image">
+            </div>
+            <div class="container-s">
+                <span style="margin-top:10px;">
+                    Sinopse: {{movie.sinopse}}
+                </span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+        </div>
+    </ng-template>
+    
+    <!-- MODAL CONFIRM -->
+    <ng-template #confirmNoSelect let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title">Alert</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Confirme a ação de não escolher nenhum dos filmes apresentados</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="c('CONFIRM')">Confirmar</button>
+          <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancelar</button>
+        </div>
+      </ng-template>
+
+      <!-- MODAL SAIR -->
+<ng-template #confirmLeave let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Alert</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Você gostaria de deixar a pesquisa?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="c('CONFIRM')">SIM</button>
+        <button type="button" class="btn btn-primary" (click)="c('Close click')">NÂO</button>
+    </div>
+    </ng-template>

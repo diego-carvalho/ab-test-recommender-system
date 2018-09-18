@@ -1,0 +1,124 @@
+<div class="imgBackground">
+  <div class="container container-body">
+    <div class="row align-items-center body">
+        <div class="col">
+          <div class="startText text-center">
+            <h5>Seja Bem Vindo!</h5>
+            <br>
+            Esta é uma pesquisa conduzida por membros do departamento de Ciência da Computação da Universidade Federal de Minas Gerais (UFMG).
+            Nessa pesquisa, estamos estudando o auxílio que as listas de recomendações proporcionam para os usuários de um sistema web.
+            <br>
+            <br>
+            Este estudo é dividido em 6 etapas distintas, sendo que em algumas etapas serão apresentadas algumas listas de recomendação com 10 filmes em cada. 
+            As orientações para cada etapa serão apresentadas no momento da pesquisa. Você não é obrigado a responder todas as perguntas e caso deseje, 
+            você poderá deixar o sistema a qualquer momento.
+            Em geral, vamos apresentar algumas listas de filmes e realizar algumas perguntas sobre a sua opinião a respeito das listas. 
+            <br>
+            <br>
+            Todos os dados coletados são anonimizados e restritos 
+            aos membros dessa pesquisa.
+            <br>
+            <br>
+            Você é o nosso convidado para participar!
+            <br>
+            Para começar, concorde com o termo de compromisso.
+            <br>
+            <br>
+            <span class="termText" (click)="open(termModal)" >Clique aqui para ler o termo de compromisso</span>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" style="margin-top:10px;"
+                (change)="changeCheckbox($event)">
+                Aceito o termo de compromisso
+              </label>
+            </div>
+            
+            <button class="btn btn-primary buttonNext" (click)="goNext(confirmNoSelect)">
+              Começar
+            </button>
+
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CONFIRM -->
+<ng-template #confirmNoSelect let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Alert</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Para continuar precisa aceitar o termo de compromisso, obrigado.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="c('CONFIRM')">OK</button>
+  </div>
+</ng-template>
+
+<!-- MODAL TERM -->
+<ng-template #termModal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Termo de compromisso</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="text-center">
+        Universidade Federal de Minas Gerais
+        <br>
+        <br>
+        Programa de Pós-Graduação em Ciência da Computação
+        <br>
+        <br>
+        Termo de Consentimento Livre e Esclarecido (TCLE) em concordância com a pesquisa
+        <br>
+        <br>
+    </div>
+    <div style="width:90%; margin-left:5%;">
+        Prezado(a) participante,
+        <br>
+        <br>
+        Você está sendo convidado para participar dessa pesquisa relacionada ao desempenho de estratégias de Sistemas de Recomendação, um estudo de membros da Universidade Federal de Minas Gerais. A sua participação nesta pesquisa é voluntária e consiste, ao aceitar em colaborar com a pesquisa, em responder a uma série de questionários eletrônicos online. 
+        <br>
+        <br>
+        Ao responder cada questionário você não terá nenhum benefício direto ou imediato. No entanto, os resultados desta pesquisa poderão permitir a compreensão do papel dos Sistemas de Recomendação no auxilio da interação do usuário com o sistema e, assim, possibilitar a construção de novos recomendadores. Sua resposta será enviada automaticamente ao mestrando Nicollas de Campos Silva e ao professor Adriano César Machado Pereira, ambos vinculados ao Programa de Pós-Graduação em Ciência da Computação da Universidade Federal de Minas Gerais.
+        <br>
+        <br>
+        Os conhecimentos resultantes deste estudo serão constituídos por dados estatísticos. Os sujeitos participantes não serão mencionados ou identificados. Dessa forma, podemos garantir que em nenhum momento durante os processos de análise e divulgação dos resultados os mesmos terão a identidade exposta. A pesquisa será divulgada em revistas especializadas e eventos na área de Ciência da Computação, bem como em uma dissertação de mestrado. Os dados coletados constituirão um banco de dados que ficará sob a guarda dos pesquisadores do projeto por 10 anos, podendo, eventualmente, ser utilizados em pesquisas futuras. Depois desse prazo, os dados serão destruídos. 
+        <br>
+        <br>
+        Tratando-se de uma pesquisa que busca verificar as preferências dos usuários quanto aos seus conhecimentos por filmes, os riscos passíveis de ocorrer são a manifestação de embaraço ou constrangimento ao responder os questionários, ou ainda desgaste no raciocínio ao preencher o instrumento de pesquisa, o que pode demandar tempo no entendimento das questões. Vale ressaltar que em todas essas situações o participante poderá interromper ou desistir de participar. A decisão em não participar da pesquisa não acarretará nenhum tipo de constrangimento. A qualquer momento, o participante poderá fazer perguntas aos pesquisadores, que têm a obrigação de prestar os devidos esclarecimentos.
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="text-center">
+        Termo de compromisso dos pesquisadores
+        <br>
+        <br>
+    </div>
+    <div style="width:90%; margin-left:5%;">
+        Garantimos que este Termo de Consentimento será seguido e que responderemos a quaisquer questões colocadas pelo participante, no endereço de e-mail que segue.
+        <br>
+        <br>
+        Nicollas de Campos Silva
+        <br>
+        E-mail: ncsilvaa@gmail.com
+        <br>
+        Mestrando - UFMG
+        <br>
+        <br>
+        Prof. Adriano César Machado Pereira
+        <br>
+        Orientador - UFMG
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="c('CONFIRM')">OK</button>
+  </div>
+</ng-template>
